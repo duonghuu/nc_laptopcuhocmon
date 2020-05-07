@@ -38,13 +38,13 @@ function get_http(){
 
 $https= get_http();
 
-	$config_url_folder="";
+	$config_url_folder="/2005/nc_laptopcuhocmon";
 	$config_url=$_SERVER["SERVER_NAME"].$config_url_folder;
 	$config_url_http=$https.$config_url."/";
 	$config['database']['servername'] = 'localhost';
-	$config['database']['username'] = 'suachualap_db';
-	$config['database']['password'] = 'cV3pmX9fP4';
-	$config['database']['database'] = 'suachualap_db';
+	$config['database']['username'] = 'root';
+	$config['database']['password'] = '';
+	$config['database']['database'] = 'nc_laptopcuhocmon';
 	$config['database']['refix'] = 'table_';
 	$config['author']['name'] = 'Diệp Phúc Tài';
 	$config['author']['email'] = 'phuctai.nina@gmail.com';

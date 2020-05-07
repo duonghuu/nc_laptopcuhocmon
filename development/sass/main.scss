@@ -9,19 +9,42 @@
 @import 'abstracts/main';
 
 // 2. Vendors
-@import 'vendors/main';
+// @import 'vendors/main';
+@import "assets/css/animate.min",
+        "assets/css/font-awesome-4.7.0/css/font-awesome.min",
+        "assets/ddsmoothmenu/ddsmoothmenu",
+        "assets/mmenu/jquery.mmenu.all",
+        "assets/mmenu/style_mmenu",
+        "assets/fancybox3/jquery.fancybox",
+        "assets/fancybox3/jquery.fancybox.style",
+        "assets/css/cart",
+        "assets/slick/slick",
+        "assets/slick/slick-theme",
+        "assets/slick/slick-style",
+        "assets/nivoslider/themes/default/default",
+        "assets/nivoslider/css/nivo-slider",
+        "assets/fotorama/fotorama",
+        "assets/fotorama/fotorama-style",
+        "assets/magiczoomplus/magiczoomplus",
+        "assets/magiczoomplus/magiczoomplus-style",
+        "assets/tabs/easy-responsive-tabs",
+        "assets/tabs/easy-responsive-tabs-style",
+        "assets/messenger/messenger2",
+        "assets/owlcarousel2/owl.carousel",
+        "assets/owlcarousel2/owl.theme.default",
+        "assets/css/style";
 
 // 3. Base stuff
-@import 'base/main';
+// @import 'base/main';
 
 // 4. Layout-related sections
-@import 'layout/main';
+// @import 'layout/main';
 
 // 5. Components
-@import 'components/main';
+// @import 'components/main';
 
 // 6. Page-specific styles
-@import 'pages/main';
+// @import 'pages/main';
 
 // 7. Mobile
-@import 'devices/main';
+// @import 'devices/main';

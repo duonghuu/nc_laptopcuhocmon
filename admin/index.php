@@ -8,7 +8,7 @@
 
 	include_once _lib."AntiSQLInjection.php";
 	include_once _lib."config.php";
-	if(count($config['arrayDomainSSL'])) include_once _lib."checkSSL.php";
+	// if(count($config['arrayDomainSSL'])) include_once _lib."checkSSL.php";
 	include_once _lib."constant.php";
 	include_once _lib."config_type.php";
 	include_once _lib."functions.php";

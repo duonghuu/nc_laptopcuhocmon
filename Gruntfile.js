@@ -146,7 +146,7 @@ module.exports = function(grunt) {
   // Task Publish Project
     grunt.registerTask('publish', [
         'cssmin',
-        'concat',
+        // 'concat',
         'uglify'
     ]);
     grunt.registerTask('devjs', [

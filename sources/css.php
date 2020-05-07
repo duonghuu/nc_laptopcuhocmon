@@ -2,8 +2,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
 <!-- CSS DESKTOP -->
-<style type="text/css"><?php echo file_get_contents($config_url_http.'assets/cssoptimized.php'); ?></style>
-
+<?php /* 
+<style type="text/css"><?php echo file_get_contents($config_url_http.'assets/cssoptimized.php'); ?></style> 
+*/?>
+<link rel="stylesheet" href="main.css?v=1.0">
 <!-- JS DESKTOP -->
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 
