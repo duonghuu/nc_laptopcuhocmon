@@ -1,0 +1,95 @@
+%mybs-carousel-img{
+  @extend %img-fill;
+  object-position: top center;
+  object-fit: cover;
+}
+%mybs-carousel-horizontal{
+  .carousel-indicators{
+    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-left: 0;
+    margin-right: 0;
+    display: block;
+    li{
+      width: percentage(1/8);
+      height: auto;
+      margin: 0;
+      @include flex(unset);
+      display: inline-block;
+      figure{
+        position: relative;
+        padding-top: $product-ratio;
+        margin-bottom: 0;
+        img{
+          @extend %mybs-carousel-img;
+        }
+      }
+    }
+  }
+  .carousel-slider{
+      position: relative;
+    .carousel-item{
+      position: relative;
+      padding-top: $product-ratio;
+      img{
+        @extend %mybs-carousel-img;
+      }
+      &.active{
+        img{
+          
+        }
+      }
+    }
+  }
+}
+%mybs-carousel-verticle{
+  @include grid(flex, $flex-wrap: wrap, $justify-content: space-between, 
+    $align-items: null, $gutter: null);
+  .carousel-indicators{
+    width: percentage(120/600);
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    position: relative;
+    max-height: 350px;
+    overflow-y: scroll;
+    @include grid(flex, $flex-wrap: wrap, $justify-content: space-between, 
+      $align-items: null, $gutter: null);
+    li{
+      width: 100%;
+      height: auto;
+      margin-bottom: 5px;
+      border: 0;
+      figure{
+        position: relative;
+        padding-top: $product-ratio;
+        margin-bottom: 0;
+        img{
+          @extend %mybs-carousel-img;
+        }
+      }
+    }
+  }
+  .carousel-slider{
+    order: 1;
+    width: percentage(472/600);
+    position: relative;
+    .carousel-item{
+      position: relative;
+      padding-top: $product-ratio;
+      img{
+        @extend %mybs-carousel-img;
+      }
+      &.active{
+        img{
+          
+        }
+      }
+    }
+  }
+}
+.mybs-carousel{
+  @extend %mybs-carousel-horizontal;
+  
+}

@@ -1,0 +1,20 @@
+div#tags{
+    margin-top: 10px;
+    %tag_style{
+        display: inline-block;
+        border: 1px solid #ddd;
+        padding: 3px 5px;
+        text-decoration: none;
+        color: #222;
+    }
+    a{
+        @extend %tag_style;
+        &::hover{
+            color:#f00;
+        }
+    }
+    span{
+        @extend %tag_style;
+        background: #ddd;
+    }
+}

@@ -1,0 +1,42 @@
+.dm-sp{
+  #danhmuc{
+    ul{
+      @extend %reset-list;
+
+      li{
+        position: relative;
+        a{
+          @include grid($display: flex, $align-items: center);
+          @include setFont(14px, #333, 400, $font-menu);
+          position: relative;
+          padding: 15px;
+          @include transition(all 0.2s ease);
+          &:before{
+            content: "";
+            @include bg("left-icon.png");
+            @include box(11px, 11px);
+            margin-right: 10px;
+          }
+          @include on-event(){
+            color: $theme-color;
+          };
+        }
+        ul{
+          display: none;
+          @include absolute($left: 100%, $top: 0px);
+          min-width: 100%;
+          border: 1px solid #cacaca;
+          background-color: #f4f4f4;
+        }
+        @include doubly(){
+          border-top: 1px dashed #cacaca;
+        };
+        @include on-event(){
+          &>ul{
+            display: block;
+          }
+        };
+      }
+    }
+  }
+}

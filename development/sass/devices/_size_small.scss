@@ -1,0 +1,24 @@
+@media screen 
+	and (min-width: $device_size_small)
+	and (max-width: $device_size_medium) 
+{
+  @include setHeaderCenter;
+  @include showMobileMenu;
+  @include setSlider_SM;
+  @include setIdxTitleSize;
+
+  /*========= HOME ===============*/
+  // @include setTinNB_SM;
+  // @include setViSao_SM;
+  $product-gutter: percentage(20/1200);
+  @include setProductColumnMobile($p_col: 6, $p_gutter: $product-gutter);
+  @include setNewColumnMobile($p_col: 6, $p_gutter: 2%);
+  // @include setTinVideoFull;
+  
+  /*========= FOOTER ===============*/
+  @include setFooterSmall;
+  @include setCopyrightCenter;
+  // @include setProductMobile;
+  
+  
+}

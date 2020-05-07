@@ -1,0 +1,59 @@
+.box-menu-slider{
+    
+    width: percentage(270/1200);
+    position: relative;
+    z-index: 2;
+    ul{
+        margin: 0;
+        list-style-type: none;
+    }
+}
+.menu-left{
+    background-color: #ebebeb;
+    height: 100%;
+    &>li{
+        &:after, &:before{
+            $menu-line-width: calc(100% - 30px);
+            content: "";
+            background-color: #d7d7d7;
+            @include box($menu-line-width, 1px);
+            @include absolute($bottom: 0, $left: 15px);
+        }
+        &:after{
+            background-color: #fff;
+            bottom: -1px;
+        }
+    }
+    li{
+        padding: 15px;
+        position: relative;
+        &:hover{
+            & > ul{
+                display: block;
+            }
+        }
+        a{
+            text-decoration: none;
+            display: block;
+            
+            @include setFont(16px, #1f1f1f, 400, "Arial");
+            &:before {
+                content: "\f009";
+                font:{
+                    size: 7px;
+                    weight: 700;
+                    family: $font-awesome;
+                };
+                @include relative($top: -3px);
+                margin: 0 10px;
+            }
+        }
+        @include setTagAHover(#707070, $bg-menu);
+        ul{
+            @extend %sub-menu-list;
+            left: 100%;
+            top: 0;
+            width: 100%;
+        }
+    }
+}

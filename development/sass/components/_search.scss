@@ -1,0 +1,49 @@
+.openBtn {
+    border: none;
+    cursor: pointer;
+    z-index: 400;
+    outline: none !important;
+    background-color: transparent;
+    @include transition(width .6s, border-radius .6s, background .6s, box-shadow .6s);
+    @include absolute($right: 0);
+    @include setFont(17px, #333, 700);
+    @include box(36px, 32px);
+    @include grid($display: inline-flex, $align-items: center, $justify-content: center);
+}
+
+#search {
+    width: 100%;
+    max-width: 223px;
+    z-index: 50;
+    margin-left: 40px;
+    &.hien {
+        display: block;
+    }
+
+    .my-search {
+        @include boxstyle($display: flex, $align-items: center, $justify-content:
+         space-between);
+        overflow: hidden;
+        background-color: #fff; 
+        border: 1px solid #fff;
+        border-radius: 20px;
+        .keyword {
+            @include flex(1);
+            @include setFont(13px, #333);
+            padding: 0px 10px;
+            border: 0;
+            height: 36px;
+            box-shadow: none;
+            background-color: transparent;
+        }
+
+        .btn_search {
+            @include setFont(16px, #0e508c);
+            @include boxstyle($display: flex, $justify-content: center, 
+              $align-items: center);
+            cursor: pointer;
+            @include box(36px, 36px);
+        }
+    }
+
+}

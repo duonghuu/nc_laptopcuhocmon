@@ -1,0 +1,25 @@
+/* Begin Jpage */
+.holder{margin: 0;text-align: center;}
+.holder a{cursor: pointer !important;margin: 0 1px;color: #8c8c8c;width: auto !important;height: auto !important;display: inline-block;padding: 2px 10px;vertical-align: top;box-sizing: border-box;background-color: transparent;text-align: center;border: 1px solid #ccc;}
+.holder a:hover, .holder a.jp-current, a.jp-current:hover{background-color: #69797E;color: white;}
+.holder a.jp-previous{margin-right: 1px;background: url(assets/images/prev-page.png) no-repeat center;}
+.holder a.jp-next{margin-left: 1px;background: url(assets/images/next-page.png) no-repeat center;}
+.holder a.jp-previous:hover{background: url(assets/images/prev-page-hv.png) #69797E no-repeat center;}
+.holder a.jp-next:hover{background: url(assets/images/next-page-hv.png) #69797E no-repeat center;}
+.holder a.jp-first, .holder a.jp-last{width: auto;}
+.holder a.jp-first{}
+.holder a.jp-last{}
+.holder a.jp-first:hover{color: #fff;}
+.holder a.jp-last:hover{color: #fff;}
+.holder a.jp-current, a.jp-current:hover{background: #69797E;color: #fff;border-color: #69797E;}
+.holder span{margin: 0 5px;}
+ul.jpage_items{list-style: none;margin: auto;min-height: auto !important;padding: 0px;}
+ul.jpage_items > li{float: left;margin-right: 42px;margin-bottom: 42px;}
+ul.jpage_items > li:nth-child(2n+1){clear: both;}
+ul.jpage_items > li:nth-child(2n){margin-right: 0px;}
+.customBtns{position:relative;}
+.arrowPrev,.arrowNext{width:29px;height:29px;position:absolute;top:55px;cursor:pointer;}
+.arrowPrev{background-image:url('assets/images/back.gif');left: 0px;}
+.arrowNext{background-image:url('assets/images/next.gif');right: 0px;}
+.arrowPrev.jp-disabled,.arrowNext.jp-disabled{display: none;}
+/* End Jpage */

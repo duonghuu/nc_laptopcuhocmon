@@ -1,0 +1,13 @@
+.fb-livechat,.fb-widget{display:none}
+.ctrlq.fb-button,.ctrlq.fb-close{position:fixed;right:24px;cursor:pointer}
+.ctrlq.fb-button{z-index:999;background:url(assets/messenger/messenger.png) center no-repeat #0084ff;width:60px;height:60px;text-align:center;bottom:120px;right:10px;border:0;outline:0;border-radius:60px;-webkit-border-radius:60px;-moz-border-radius:60px;-ms-border-radius:60px;-o-border-radius:60px;box-shadow:0 1px 6px rgba(0,0,0,.06),0 2px 32px rgba(0,0,0,.16);-webkit-transition:box-shadow .2s ease;background-size:80%;transition:all .2s ease-in-out;}
+.ctrlq.fb-button:focus,.ctrlq.fb-button:hover{transform:scale(1.1);box-shadow:0 2px 8px rgba(0,0,0,.09),0 4px 40px rgba(0,0,0,.24)}
+.fb-widget{background:#fff;z-index:1000;position:fixed;width:270px;height:350px;overflow:hidden;opacity:0;bottom:0;right:24px;border-radius:6px;-o-border-radius:6px;-webkit-border-radius:6px;box-shadow:0 5px 40px rgba(0,0,0,.16);-webkit-box-shadow:0 5px 40px rgba(0,0,0,.16);-moz-box-shadow:0 5px 40px rgba(0,0,0,.16);-o-box-shadow:0 5px 40px rgba(0,0,0,.16)}
+.fb-credit{text-align:center;margin-top:8px;padding:0px 40px;}
+.fb-credit a{transition:none;color:#bec2c9;font-family:Helvetica,Arial,sans-serif;font-size:12px;text-decoration:none;border:0;font-weight:400}
+.fb-credit a.text-hide{-webkit-line-clamp:1;}
+.ctrlq.fb-overlay{z-index:0;position:fixed;height:100vh;width:100vw;-webkit-transition:opacity .4s,visibility .4s;transition:opacity .4s,visibility .4s;top:0;left:0;background:rgba(0,0,0,.05);display:none}
+.ctrlq.fb-close{z-index:4;padding:0 6px;background:#365899;font-weight:700;font-size:11px;color:#fff;margin:8px;border-radius:3px}
+.ctrlq.fb-close::after{content:"X";font-family:sans-serif}
+.bubble{display:none;width:20px;height:20px;background:#c00;color:#fff;position:absolute;z-index:999999999;text-align:center;vertical-align:middle;top:-2px;left:-5px;border-radius:50%;}
+.bubble-msg{display:none;width:120px;left:-125px;top:5px;position:relative;background:rgba(59,89,152,.8);color:#fff;padding:5px 8px;border-radius:8px;text-align:center;font-size:13px;}

@@ -1,0 +1,29 @@
+.wrap-user{width:100%;margin:auto;border:1px solid #bce8f1;line-height:normal;border-radius:5px;}
+.wrap-user a{color:#428bca;}
+.login-user{max-width:550px;}
+.signup-user{max-width:550px;}
+.title-user{color:#31708f;background-color:#d9edf7;display:flex;align-items:flex-end;justify-content:space-between;padding:12px 15px;border-radius:5px 5px 0px 0px;}
+.title-user span{font-size:16px;}
+.title-user a{font-size:12px;}
+.frm-user{padding:25px 15px;display:block;}
+.double-item-user{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;}
+.double-item-user:last-child{margin-bottom:0px;}
+.double-item-user .label-item-user{font-weight:bold;width:210px;margin:13px 20px 0px 0px;text-align:right;}
+.double-item-user .label-item-user span{color:#a94442;padding-left:3px;}
+.double-item-user .input-item-user{width:100%;}
+.double-item-user .input-item-user .item-user{margin:0px;}
+.checkbox-item-user .label-item-user,.checkbox-item-user .input-item-user{margin-top:0px;}
+.checkbox-item-user .input-item-user label{margin-right:20px;cursor:pointer;}
+.checkbox-item-user .input-item-user label input{display:inline-block;vertical-align:middle;}
+.checkbox-item-user .input-item-user label span{display:inline-block;vertical-align:middle;font-weight:bold;padding-left:5px;}
+.item-user{border:1px solid #ccc;border-radius:3px;margin-bottom:20px;display:flex;align-items:stretch;justify-content:space-between;}
+.item-user i{padding:10px;width:45px;text-align:center;background:#eee;font-size:18px;color:#444;border-radius:3px 0px 0px 3px;border-right:1px solid #ccc;}
+.item-user input{width:100%;text-indent:10px;border-radius:0px 3px 3px 0px;font-size:14px;}
+.remember-user{display:block;cursor:pointer;}
+.remember-user input,.remember-user span{display:inline-block;vertical-align:middle;}
+.remember-user span{font-size:13px;}
+.btn-user{display:flex;align-items:center;justify-content:space-between;}
+.sm-user{color:#fff;background:#2A9CEA;padding:10px 15px;border-radius:5px;font-size:15px;cursor:pointer;}
+.sm-login-user{background:#5cb85c;}
+.sm-login-user:hover{background:#53a953;}
+.checklogin-user{border-top:1px solid rgba(136,136,136,0.4);padding-top:10px;margin-top:20px;font-size:12px;}

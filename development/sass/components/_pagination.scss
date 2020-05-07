@@ -1,0 +1,73 @@
+/*----------Phan trang-------------*/
+.pagination{
+  justify-content:center;
+  display:flex;width:100%;
+    ul.pages{
+        li{
+            display:inline-flex;
+            margin:5px 2px;
+            a{
+                height:25px;
+                padding:4px 8px;
+                text-decoration:none;
+                color:#666666;
+                border:1px solid #d5d5d5;
+                font:{
+                    weight:bold;
+                    size:11px;
+                };
+                background:#fff;
+                &:hover{
+                    background:#f6f6f6;
+                }
+                &.active{
+                    background:#424852;
+                    color:#fff;
+                    border-color:#424852;
+                    &:hover{
+                        background:#2a313d;
+                    }
+                }
+            }
+            &>a{
+                background-color:#e9ecef;border-color:#dee2e6;
+            }
+            &:only-child{display:none;}
+            &.prev{margin-right:15px;}
+            &.next{margin-left:15px;}
+        }
+    }
+}
+/*----------Phan trang-------------*/
+/*----------Phan trang ajax-------------*/
+.pages_ajax{
+    display:inline-block;
+    li{
+        display: inline-block;
+        margin: 5px 2px;
+        height: 29px;
+        padding: 4px 8px;
+        text-decoration: none;
+        color: #666666;
+        font:{
+            weight: bold;
+            size: 11px;
+        };
+        border: 1px solid #d5d5d5;
+        box-sizing: border-box;
+        min-width: 30px;
+        cursor: pointer;
+        a{
+            color:#666
+        }
+        &.actived,&::hover{
+            background:#2a313d;
+            color:#fff;
+            a{
+                color:#fff;
+            }
+        }
+    }
+}
+span.total{display:none;}
+/*----------Phan trang ajax-------------*/

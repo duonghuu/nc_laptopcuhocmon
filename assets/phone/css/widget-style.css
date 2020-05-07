@@ -1,0 +1,6 @@
+.coccoc-alo-phone{top:inherit;right:inherit;width:90px;height:90px;bottom:55px;left:75px;z-index:999!important;}
+.coccoc-alo-ph-img-circle{width:60px;height:60px;top:calc(50% - 30px);left:calc(50% - 30px);}
+.coccoc-alo-phone.coccoc-alo-green .coccoc-alo-ph-img-circle{background-color:#008C44;opacity:1;}
+.coccoc-alo-phone.coccoc-alo-green.coccoc-alo-hover .coccoc-alo-ph-img-circle,.coccoc-alo-phone.coccoc-alo-green:hover .coccoc-alo-ph-img-circle{background-color:#C8941A;}
+.coccoc-alo-phone.coccoc-alo-green .coccoc-alo-ph-circle{display:none;}
+.coccoc-alo-ph-circle-fill{width:90px;height:90px;top:calc(50% - 45px);left:calc(50% - 45px);}

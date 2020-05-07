@@ -1,0 +1,42 @@
+%mxhft-style{
+    @include grid(flex, $align-items: center);
+    margin: 7px 0;
+    span{
+        // @include setFont(15px, #fff, 700);
+        // margin-right: 10px;
+    }
+    
+    a{
+        @include grid(inline-flex, $justify-content: center, $align-items: center);  
+        img{
+            max-height:40px;
+        }
+        @include doubly(){
+            margin-left: 20px;
+        };
+    }
+}
+%mxh-style{
+    @include grid($display: inline-flex, $align-items: center);
+    position: relative;
+    a{
+        @include grid($display: inline-flex, $justify-content: center,
+         $align-items: center);  
+
+        @include doubly(){
+            margin-left: 5px;
+
+        };
+        img{
+            max-height: 30px;
+            object-fit: scale-down;
+            @include transition(all 1s ease);  
+            &:hover{
+                transform: rotate(360deg);
+            }
+        }
+    }
+}
+.mxh{
+    @extend %mxh-style;
+}

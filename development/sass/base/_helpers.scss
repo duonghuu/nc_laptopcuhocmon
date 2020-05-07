@@ -1,0 +1,64 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+%img-fill {
+  @include absolute(0,0,0,0);
+  @include box(100%, 100%);
+  object-fit: fill;
+}
+%pseudos {
+  content: '';
+  position: absolute;
+}
+%reset-list {
+  list-style-type: none;
+  margin-bottom: 0;
+}
+%boxstyle_flex{
+  display: flex;
+}
+%boxstyle_inline-flex{
+  display: inline-flex;
+}
+%boxstyle_justify-content-space-between{
+  justify-content: space-between;
+}
+%boxstyle_justify-content-space-around{
+  justify-content: space-around;
+}
+%boxstyle_justify-content-center{
+  justify-content: center;
+}
+%boxstyle_justify-content-flex-start{
+  justify-content: flex-start;
+}
+%boxstyle_justify-content-flex-end{
+  justify-content: flex-end;
+}
+%boxstyle_align-items-space-between{
+  align-items: space-between;
+}
+%boxstyle_align-items-center{
+  align-items: center;
+}
+%boxstyle_align-items-flex-end{
+  align-items: flex-end;
+}
+%boxstyle_align-items-flex-start{
+  align-items: flex-start;
+}
+%boxstyle_flex-direction-column{
+  flex-direction: column;
+}
+%boxstyle_flex-wrap-wrap{
+  flex-wrap: wrap;
+}
+%boxstyle_flex-wrap-nowrap{
+  flex-wrap: nowrap;
+}
+
+
+
+
+
+

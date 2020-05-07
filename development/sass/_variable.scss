@@ -1,0 +1,90 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1210px !default;
+$browser-context: 16;
+/* ======================== FONTS ======================== */
+$font-SFUSchadowBTBlackCondensed        : 'SFUSchadowBTBlackCondensed';
+$font-UTM-Androgyne                     : 'Conv_UTM Androgyne';
+$font-UTM-Magnesium                     : 'UTM-Magnesium';
+$font-UTM-Loko                          : 'UTM-Loko';
+$font-SVN-Lobster                       : 'SVN-Lobster';
+$font-SVN-Poppins                       : 'SVN-Poppins';
+$font-UTMHelvetIns                      : 'UTMHelvetIns';
+$font-UTMYenTu                          : 'UTMYenTu';
+$font-UTMImpact                         : 'UTMImpact';
+$font-SFUFuturaBook                     : 'SFUFuturaBook';
+$font-SFUFuturaHeavy                    : 'SFUFuturaHeavy';
+$font-SFUBelleRegular                    : 'SFUBelleRegular';
+$font-JosefinSans                       : 'Josefin Sans', sans-serif;
+$font-roboto-mono                       : 'Roboto Mono', monospace;
+$font-open-sans                         : 'Open Sans', sans-serif;
+$font-roboto-condensed                  : 'Roboto Condensed', sans-serif;
+$font-roboto                            : 'Roboto', sans-serif;
+$font-barlow-semi-condensed             : 'Barlow Semi Condensed', sans-serif;
+$font-montserrat                        : 'Montserrat', sans-serif;
+$font-muli                              : 'Muli', sans-serif;
+$font-oswald                            : 'Oswald', sans-serif;
+$font-nunito                            : 'Nunito', sans-serif;
+$font-lora                              : 'Lora', serif;
+
+
+$font-title             : $font-roboto;
+$font-text              : $font-roboto;
+$font-awesome           : 'Font Awesome 5 Free';
+$font-second            : 'Arial';
+$product-ratio          : percentage(440/600);
+/* ======================== HEADER ======================== */
+$bg-header-top          : #01b1f2;
+$bg-header              : #f9f9f9;
+$bg-breadcrumb           : #f7f6f6;
+/* ======================== MENU ======================== */
+$font-menu              : $font-roboto;
+$color-menu-hover       : #fff;
+$bg-menu                : #ffcb0e;
+$bg-valak               : #ffcb0e;
+$bg-menu-item           : transparent;
+$bg-menu-item-hover     : #552213;
+/* ======================== FOOTER ======================== */
+$bg-copyright       : #552213;
+$bg-footer          : #01b1f2;
+$theme-color        : #552213;
+$height-map         : 400 * 1px;
+/* ======================== URL ======================== */
+$font-url           : 'css/fonts/';
+$font-awesome-url   : 'css/fontawesome/webfonts/';
+$images-url         : 'images/';
+/// Regular font family
+/// @type List
+$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/' !default;
+
+$device_size_mobile   : 425px;
+$device_size_small    : 768px;
+$device_size_medium   : 992px;
+$device_size_large    : 1200px;
+
+$MB: "'<=mobile','screen'";
+$XS: "'>mobile','<small','screen'";
+$SM: "'>=small','<medium','screen'";
+$MD: "'>=medium','<large','screen'";
+$LG: "'>=large','screen'";

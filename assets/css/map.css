@@ -1,0 +1,17 @@
+.list_chinhanh ul.title{width:100%;margin:0px;padding:0px;}
+.list_chinhanh ul.title li{list-style:none;float:left;padding-right:5px;height:33px;line-height:33px;border-bottom:none;margin-right:5px;padding:0px 15px;text-align:center;cursor:pointer;background:#F1F1F1;}
+.list_chinhanh ul.title li.active{background:#0F71CB;}
+.list_chinhanh ul.title li.active a{color:white;}
+.list_chinhanh ul.title li:hover{background:#0F71CB;color:white}
+.list_chinhanh ul.title li:hover a{color:white}
+.list_chinhanh ul.title li a{color:#414141;font-size:14px;font-family:'robotocondensed-regular';}
+#map_custom{height:400px;width:100%;border:solid 1px #CCC;float:left;margin:0px;padding:0px;}
+.map_description{color:#000000;overflow:auto;width:275px;}
+.map_description .default{color:#FF0000;}
+.map_description div{line-height:18px;margin:3px;font-family:Tahoma,Geneva,sans-serif!important;}
+.map_description div.map_title{text-transform:uppercase;}
+.map_list_address{float:left;height:250px;overflow:hidden;width:250px;max-width:70%;}
+.map_list_address .list{line-height:18px;margin-bottom:5px;}
+.map_list_address span{color:#FCFF46;}
+.map_title{color:#0F71CB;font-weight:bold;}
+.navigate .C{width:970px;}

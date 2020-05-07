@@ -1,0 +1,104 @@
+
+%news-tpl-grid-verticle{
+    .news-tpl-item{
+        @include boxShadow(0px 0px 10px #f3f3f3);
+        background: #fff;
+        @include grid-col($col: 4, $grid-columns: 12, $gutter: 2%);
+        a{
+            display: block;
+            padding: 10px;
+            color: #333!important;
+            figure{
+                position: relative;
+                padding-top: 70%;
+                img{
+                    
+                }
+            }
+            .info{
+                h5{
+                    @include setFont(15px, #333, 700);
+                    @include line-clamp(15px,1.3,3,true);
+                }
+                .desc{
+                    @include setFont(14px, #333);
+                    @include line-clamp(14px,1.5,4,true);
+                    text-align: justify;
+                    text-align-last: left;
+                }
+            }
+        }
+    }
+}
+%news-tpl-grid-horizontal{
+    .news-tpl-item{
+        @include boxShadow(0px 0px 10px #f3f3f3);
+        @include grid-col($col: 6, $grid-columns: 12, $gutter: 2%);
+        background: #fff;
+        @include setTagAHover(#333, #f00);
+        a{
+            @include boxstyle($display: flex, $justify-content: space-between, $align-items: flex-start);
+            padding: 10px;
+            color: #333;
+            figure{
+                width: 35%;
+                position: relative;
+                padding-top: 25%;
+                margin-bottom: 0;
+                img{
+                    
+                }
+            }
+            .info{
+                @include flex(1);
+                margin-left: 1em;
+                h5{
+                    font-size: 15px;
+                    font-weight: 700;
+                    @include line-clamp(15px, 1.3, 3, true);
+                }
+                .desc{
+                    font-size: 14px;
+                    @include line-clamp(14px, 1.5, 4, false);
+                }
+            }
+        }
+    }
+}
+.news-tpl-grid{
+    @include grid($display: flex, $flex-wrap: wrap, $gutter: 2%);
+    @extend %news-tpl-grid-verticle;
+}
+.othernews{
+    h5{
+        span{
+            background-color: $theme-color;
+            color: #fff;
+        }
+    }
+    ul.khac{
+        list-style-type: none;
+        list-style-position: inside;
+        li{
+            margin: 5px 0;
+            list-style-type: square;
+            a{
+                color: #4A4A4A;
+                text-decoration: none;
+                @include transition(all 0.4s ease);
+                i{
+                    margin-right: 6px;
+                }
+                @include on-event{
+                    color: #f00;
+                };
+            }
+        }
+    }
+}
+#article{
+    .article__name{
+        @include setFont(em(26), $theme-color, 700, $font-text);
+        margin-bottom: 10px;
+    }
+}

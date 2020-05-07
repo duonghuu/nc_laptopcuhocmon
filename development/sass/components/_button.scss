@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+%btn-chitiet{
+  @include transition(all .3s ease);
+  @include boxstyle($display: inline-flex);
+  background-color: #207a00;
+  border: 1px solid #207a00;
+  padding: 0 em(17);
+  position: relative;
+  line-height: 33px;
+  text-transform: uppercase;
+  @include setFont(14px , #fff, 700);
+  &:hover{
+    color:#ff0;
+  }
+}
+
+.btn-idx{
+  @extend %btn-chitiet;
+}

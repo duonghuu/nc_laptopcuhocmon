@@ -1,0 +1,103 @@
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/html "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 1 month"
+</IfModule>
+## EXPIRES CACHING ##
+<ifModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/* text/html text/xml text/css text/plain text/x-component text/x-js text/richtext text/xsd text/xsl
+    AddOutputFilterByType DEFLATE image/svg+xml application/xhtml+xml application/xml image/x-icon
+    AddOutputFilterByType DEFLATE application/rdf+xml application/rss+xml application/atom+xml
+    AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript application/json
+    AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-otf
+    AddOutputFilterByType DEFLATE font/truetype font/opentype
+    Header append Vary User-Agent env=!dont-vary
+    AddOutputFilter DEFLATE js css htm html xml text
+</ifModule>
+
+# 1 year
+<FilesMatch ".(ico|pdf|flv)$">
+Header set Cache-Control "max-age=29030400, public"
+</FilesMatch>
+# 1 WEEK
+<FilesMatch ".(jpg|jpeg|png|gif|swf)$">
+Header set Cache-Control "max-age=604800, public"
+</FilesMatch>
+# 2 DAYS
+<FilesMatch ".(xml|txt|css|js)$">
+Header set Cache-Control "max-age=604800, proxy-revalidate"
+</FilesMatch>
+# 2 DAYS
+<FilesMatch ".(html|htm|php)$">
+Header set Cache-Control "max-age=604800, private, proxy-revalidate"
+</FilesMatch>
+
+RewriteEngine on
+Options -Indexes
+DirectoryIndex index.php
+
+# Link admin
+RewriteRule ^admin/$ admin/index.php  [L]
+RewriteRule ^admin$ admin/index.php  [L]
+
+# Link tự động sitemap
+RewriteRule ^sitemap.xml$ sitemap.php [L]
+
+# Link bỏ www
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+# Link watermark
+RewriteRule ^([0-9]+)x([0-9]+)x([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)/([0-9]+)/([a-zA-Z0-9_-]+)/(.*)$ watermark.php?w=$1&h=$2&zc=$3&twper=$4&thper=$5&img_x=$6&img_y=$7&kind=$8&src=$9 [L]
+
+# Link timthumb
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([0-9]+)x([0-9]+)x([0-9]+)/(.*)\.(jpg|jpeg|png|gif|JPG|PNG)$ timthumb.php?src=$1/$2/$6.$7&h=$4&w=$3&zc=$5&q=80 [L]
+
+# Link language
+RewriteRule ^([a-z]+)/$ index.php?com=ngonngu&lang=$1  [L]
+
+# Link general
+RewriteRule ^([a-zA-Z0-9_-]+).html&p=([0-9]+)$ index.php?com=$1&p=$2  [L]
+RewriteRule ^([a-zA-Z0-9_-]+).html$ index.php?com=$1  [L]
+
+# Link search
+RewriteRule ^([a-zA-Z0-9_-]+).html/cate=([a-zA-Z0-9_-]+)&keyword=(.*)$ index.php?com=$1&cate=$2&keyword=$3  [L]
+RewriteRule ^([a-zA-Z0-9_-]+).html/cate=([a-zA-Z0-9_-]+)&keyword=(.*)&p=([0-9]+)$ index.php?com=$1&cate=$2&keyword=$3&p=$4  [L]
+
+# Link detail
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+).html$ index.php?com=$1&id=$3  [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+).html&p=([0-9]+)$ index.php?com=$1&id=$3&p=$4  [L]
+
+# Link tags
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ index.php?com=$1&id=$2 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)&p=([0-9]+)$ index.php?com=$1&id=$2&p=$3 [L]
+
+# Link account
+RewriteRule ^account/([a-zA-Z0-9_-]+).html$ index.php?com=account&kind=$1 [L]
+RewriteRule ^account/([a-zA-Z0-9_-]+).html/id=(.*)$ index.php?com=account&kind=$1&id=$2 [L]
+
+# Link list
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+)/&p=([0-9]+)$ index.php?com=$1&idl=$3&p=$4 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+)/$ index.php?com=$1&idl=$3 [L]
+
+# Link cat
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+)/&p=([0-9]+)$ index.php?com=$1&idc=$4&p=$5 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+)/$ index.php?com=$1&idc=$4 [L]
+
+# Link item
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+)/&p=([0-9]+)$ index.php?com=$1&idi=$5&p=$6 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+)/$ index.php?com=$1&idi=$5 [L]
+
+# Link sub
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+)/&p=([0-9]+)$ index.php?com=$1&ids=$6&p=$7 [L]
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)-([0-9]+)/$ index.php?com=$1&ids=$6 [L]
