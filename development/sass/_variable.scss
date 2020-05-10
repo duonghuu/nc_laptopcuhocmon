@@ -4,10 +4,11 @@
 
 /// Container's maximum width
 /// @type Length
-$max-width: 1210px !default;
+$max-width: 1230px !default;
 $browser-context: 16;
 /* ======================== FONTS ======================== */
 $font-SFUSchadowBTBlackCondensed        : 'SFUSchadowBTBlackCondensed';
+$font-SFUTradeGothicBoldCondensedTwenty : 'SFUTradeGothicBoldCondensedTwenty';
 $font-UTM-Androgyne                     : 'Conv_UTM Androgyne';
 $font-UTM-Magnesium                     : 'UTM-Magnesium';
 $font-UTM-Loko                          : 'UTM-Loko';
@@ -44,19 +45,19 @@ $bg-breadcrumb           : #f7f6f6;
 /* ======================== MENU ======================== */
 $font-menu              : $font-roboto;
 $color-menu-hover       : #fff;
-$bg-menu                : #ffcb0e;
+$bg-menu                : #01a5fa;
 $bg-valak               : #ffcb0e;
 $bg-menu-item           : transparent;
 $bg-menu-item-hover     : #552213;
 /* ======================== FOOTER ======================== */
 $bg-copyright       : #552213;
 $bg-footer          : #01b1f2;
-$theme-color        : #552213;
+$theme-color        : #01a5fa;
 $height-map         : 400 * 1px;
 /* ======================== URL ======================== */
-$font-url           : 'css/fonts/';
-$font-awesome-url   : 'css/fontawesome/webfonts/';
-$images-url         : 'images/';
+$font-url           : 'assets/fonts/';
+$font-awesome-url   : 'assets/fontawesome/webfonts/';
+$images-url         : 'assets/images/';
 /// Regular font family
 /// @type List
 $text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;

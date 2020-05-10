@@ -1,3 +1,50 @@
+<footer class="footer">
+    <div class="wrap-content">
+        <div class="footer-flex">
+            <div class="footer__info">
+                <div class="footer__name">
+                    <?=$footer['ten'.$lang]?>
+                </div>
+                <div class="footer__info-content">
+                    <?=$footer['noidung'.$lang]?>
+                </div>
+            </div>
+            <div class="footer__baiviet">
+                <div class="footer__title">
+                    Chính sách mua hàng
+                </div>
+                <ul>
+                    <li><a href="">Chính sách mua hàng xxx</a></li>
+                    <li><a href="">Chính sách mua hàng xxx</a></li>
+                    <li><a href="">Chính sách mua hàng xxx</a></li>
+                </ul>
+            </div>
+            <div class="footer__baiviet">
+                <div class="footer__title">
+                    Chính sách bán hàng
+                </div>
+                <ul>
+                    <li><a href="">Chính sách mua hàng xxx</a></li>
+                    <li><a href="">Chính sách mua hàng xxx</a></li>
+                    <li><a href="">Chính sách mua hàng xxx</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="copyright">
+    <div class="wrap-content">
+        <div class="copyright-flex">
+            <div class="copyright__text"><?=$row_setting['copyright']?>. Web Design by Nina.vn</div>
+            <ul class="thongketruycap">
+                <li><span>Online:</span><?=$count_user_online+375?></li>
+                <li><span>Truy cập tuần:</span><?=$week_visitors?></li>
+                <li><span>Tổng truy cập:</span><?=$all_visitors?></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<?php /* 
 <div class="footer">
     <div class="wrap-content">
         <div class="footer-top">
@@ -42,7 +89,8 @@
         </div>
         <div class="footer-bottom"><?=$row_setting['copyright']?>. Web Design by Nina.vn</div>
     </div>
-</div>
+</div> 
+*/?>
 <?php if($com!='gio-hang') { ?>
     <a class="cart-fixed" href="gio-hang.html" title="Giỏ hàng">
         <i class="fa fa-shopping-bag"></i>

@@ -9,10 +9,10 @@
 @import 'abstracts/main';
 
 // 2. Vendors
-// @import 'vendors/main';
+@import 'vendors/main';
 @import "assets/css/animate.min",
-        "assets/css/font-awesome-4.7.0/css/font-awesome.min",
-        "assets/ddsmoothmenu/ddsmoothmenu",
+        // "assets/css/font-awesome-4.7.0/css/font-awesome.min",
+        // "assets/ddsmoothmenu/ddsmoothmenu",
         "assets/mmenu/jquery.mmenu.all",
         "assets/mmenu/style_mmenu",
         "assets/fancybox3/jquery.fancybox",
@@ -35,16 +35,16 @@
         "assets/css/style";
 
 // 3. Base stuff
-// @import 'base/main';
+@import 'base/main';
 
 // 4. Layout-related sections
-// @import 'layout/main';
+@import 'layout/main';
 
 // 5. Components
-// @import 'components/main';
+@import 'components/main';
 
 // 6. Page-specific styles
-// @import 'pages/main';
+@import 'pages/main';
 
 // 7. Mobile
-// @import 'devices/main';
+@import 'devices/main';

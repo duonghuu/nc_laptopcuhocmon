@@ -1,5 +1,38 @@
 <?php if(!defined('_lib')) die("Error");
-
+function showProduct($v,$options=array(),$k=null){
+	global $lang;
+	$link = "san-pham/".$v["tenkhongdau"].$v["id"].".html";
+	$img = "270x245x2/100/100/0/0/product/"._upload_product_l.$v['photo'];
+	$mota = str_replace("\n","<br>",$v['mota'.$lang]);
+	$s_gia = "";
+	if($v["giagiam"]) {
+		$s_gia .= '<p class="price-old-sp">'.number_format($v['gia'],0, ',', '.').'<b>đ</b></p>';
+		$s_gia .= '<p class="price-new-sp">'.number_format($v['giagiam'],0, ',', '.').'<b>đ</b></p>';
+	}else{
+		$s_gia .= '<p class="price-new-sp">'.(($v['gia'])?number_format($v['gia'],0, ',', '.')."<b>đ</b>":_lienhe).'</p>';
+	}
+	if(($options["slick"])){
+		$imgurl='<img src="'.$img.'" alt="'.$v["ten$lang"].'" />';
+		$slickdiv = '<div class="slick-box-item">';
+		$slickenddiv = '</div>';
+	}else{
+		$imgurl='<img src="'.$img.'" alt="'.$v["ten$lang"].'" />';
+		$slickdiv=$slickenddiv="";
+	}
+	echo $slickdiv.'<div class="pr-box">
+            <a class="sp" href="'.$link.'" title="'.$v["ten$lang"].'">
+                <div class="info-sp">
+                    <div class="pic-sp scale-img">
+                        '.$imgurl.'
+                        <div class="desc-sp scroll-maded transition">'.$mota.'</div>
+                    </div>
+                    <h3 class="name-sp transition">'.$v["ten$lang"].'</h3>
+                </div>
+                <div class="price-sp">'.$s_gia.'                
+                </div>
+            </a>
+        </div>'.$slickenddiv;
+}
 /* Begin Kiểm tra dữ liệu nhập vào */
 function cleanInput($input)
 {

@@ -2,20 +2,20 @@
 	and (min-width: $device_size_mobile)
 	and (max-width: $device_size_small) {
       @include setHeaderCenter;
-      @include showMobileMenu;
-      @include setIdxTitleSize;
-      @include setSlider_SM;
+      // @include showMobileMenu;
+      // @include setIdxTitleSize;
+      // @include setSlider_SM;
 
       /*========= HOME ===============*/
       // @include setTinNB_SM;
       // @include setViSao_SM;
-      $product-gutter: percentage(20/1200);
-      @include setProductColumnMobile($p_col: 6, $p_gutter: $product-gutter);
-      @include setProductMobile;
-      @include setNewColumnMobile($p_col: 6, $p_gutter: 2%);
+      $product-gutter: percentage(14/1200);
+      @include setProductColumnMobile($p_col: 4, $p_gutter: $product-gutter);
+      // @include setProductMobile;
+      // @include setNewColumnMobile($p_col: 6, $p_gutter: 2%);
       // @include setTinVideoFull;
       
       /*========= FOOTER ===============*/
-      @include setFooterSmall;
-      @include setCopyrightCenter;
+      // @include setFooterSmall;
+      // @include setCopyrightCenter;
 }

@@ -208,40 +208,7 @@
 }
 /*========= HEADER ===============*/
 @mixin setHeaderCenter(){
-  .hd-bg{
-    .hd-top__left {
-      p{
-        &:first-child{
-          display: none;
-        }
-      }
-    }
-    .hd-bot__left {
-      @include media("<=mobile"){
-        img{
-          height: 80px;
-        }
-      };
-      div{
-        @include media("<=mobile"){
-          margin: 0 7px;
-        };
-        h5{
-          @include font-size(26);
-          @include media("<=mobile"){
-                      @include font-size(16);
-                    };
-        }
-        p{
-          @include font-size(20);
-          @include media("<=mobile"){
-            @include font-size(10);
-          };
-        }
-      }
-    }
-  } 
-  .hd-hotline{
+  .hd-hotline, .nav-bg{
     display: none;
   }
   @include media("<=mobile"){
@@ -331,12 +298,29 @@
 }
 /*========= PRODUCT ===============*/
 @mixin setProductColumnMobile($p_col: 6, $p_gutter: 0){
-  .pr-box, .tienich-item{
+  .pr-box{
     @include grid-col($col: $p_col, $grid-columns: 12, $col-offset: null, $gutter: $p_gutter);  
     @include media("<=mobile"){
             margin-bottom: 1em;
           };
   }
+  .spnoibat-main{
+    margin: 0 -7px;
+  }
+  .slick-box-item {
+      padding: 0 7px;
+  }
+  @include media("<=mobile"){
+         .pr-box{
+                     margin-bottom: 1em;
+           }
+           .spnoibat-main{
+             margin: 0 -3px;
+           }
+           .slick-box-item {
+               padding: 0 3px;
+           }
+        };
   @content;
 }
 /*========= NEW ===============*/

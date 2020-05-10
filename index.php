@@ -62,18 +62,18 @@
     <?php include _source."head.php"; ?>
     <?php include _source."css.php"; ?>
 </head>
-<body>
+<body data-tit="<?= $source."_"._template.$template ?>">
     <?php
         include _source."seo.php";
         include _template."layout/header.php";
         include _template."layout/menu.php";
         include _template."layout/mmenu.php";
-        if($source=='index') include _template."layout/slide.php";
+        if($source=='index') include _template."layout/slider.php";
     ?>
     <div class="wrap-main <?=($source=='index')?'wrap-home':''?> w-clear"><?php include _template.$template."_tpl.php"; ?></div>
     <?php
         include _template."layout/footer.php";
-        include _template."layout/messenger2.php";
+        // include _template."layout/messenger2.php";
         include _source."js.php";
     ?>
     <?php if($deviceType=='phone') { ?>

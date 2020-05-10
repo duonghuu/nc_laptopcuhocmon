@@ -3,6 +3,7 @@
 
     $favicon = get_fetch_array("SELECT photo FROM table_photo WHERE hienthi=1 AND type='favicon' AND act='photo_static'");
     $logo = get_fetch_array("SELECT photo FROM table_photo WHERE type='logo' AND act='photo_static'");
+    $banner = get_fetch_array("SELECT photo FROM table_photo WHERE type='banner' AND act='photo_static'");
     $mxh1 = get_result_array("SELECT photo, link FROM table_photo WHERE type='mangxahoi1' AND hienthi=1 ORDER BY stt,id DESC");
     $mxh2 = get_result_array("SELECT photo, link FROM table_photo WHERE type='mangxahoi2' AND hienthi=1 ORDER BY stt,id DESC");
     $splistmenu = get_result_array("SELECT ten$lang, tenkhongdau, id FROM table_product_list WHERE hienthi=1 AND type='san-pham' ORDER BY stt,id DESC");

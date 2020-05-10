@@ -59,9 +59,10 @@ $https= get_http();
 	/* Cấu hình Google Recaptcha Key */
 	$config_recaptcha=true;
 	$config_urlapi='https://www.google.com/recaptcha/api/siteverify';
-	$config_sitekey='6LfA1KkUAAAAACODZiYzLWMyVr5m2hnB7wTFtse3';
-	$config_secretkey='6LfA1KkUAAAAAMFZ__iOI04ySYw8tOzQQ3xUGUDD';
-
+	// $config_sitekey='6LfA1KkUAAAAACODZiYzLWMyVr5m2hnB7wTFtse3';
+	// $config_secretkey='6LfA1KkUAAAAAMFZ__iOI04ySYw8tOzQQ3xUGUDD';
+  $config_sitekey = '6LfrTJkUAAAAAJvr-qt-eCnpESTHTgq275qGaMyB';
+  $config_secretkey = '6LfrTJkUAAAAAKT9qwHJMryQsVSfSw5XI_upBjZS';
 	/* Cấu hình số lần đăng nhập và thời gian chờ đăng nhập */
 	$config['login']['attempt'] = 5; // Số lần cho phép đăng nhập sai
 	$config['login']['delay'] = 15; // Thời gian chờ khi cho phép đăng nhập lại
@@ -91,4 +92,5 @@ $https= get_http();
 	$config_color="#333";
 
 	$config['arrayDomainSSL'] = array("laptopcuhocmon.com");
+  //Z8ORB2CN
 ?>

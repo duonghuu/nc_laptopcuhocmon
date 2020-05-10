@@ -104,6 +104,7 @@ module.exports = function(grunt) {
             files: [
                 '<%= dirs.inputSCSS %>/*.scss',             // development/sass/*.scss
                 '<%= dirs.inputSCSS %>/*/*.scss',           // development/sass/*/*.scss
+                '<%= dirs.inputSCSS %>/*/*/*.scss',           // development/sass/*/*/*.scss
                 //'<%= dirs.inputDevJS %>/*.js', 
                 '<%= dirs.input %>/index.html',
                 '<%= dirs.inputHTMLELements %>/*.html',     // development/html-elements/*.html

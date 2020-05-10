@@ -1,20 +1,54 @@
+<!-- Slick -->
+<script src="assets/slick/slick.js" type="text/javascript" charset="utf-8"></script>
 <!-- WOW JS -->
 <script src="assets/js/wow.min.js"></script>  
 <script type="text/javascript">
-    $(document).ready(function(){new WOW().init();})
+    $(document).ready(function(){
+      $('#lstvideo').change(function(){
+       $("#iframe").attr("src","//www.youtube.com/embed/"+$(this).val()+"?autoplay=1");
+      }); 
+      new WOW().init();
+    })
 </script>
-
+<?php /* 
 <!-- DDSmoothMenu -->
 <script type="text/javascript" src="assets/ddsmoothmenu/ddsmoothmenu.js"></script>
 <script type="text/javascript">
     ddsmoothmenu.init({mainmenuid: "smoothmenu1",orientation: 'h',classname: 'ddsmoothmenu',contentsource: "markup"})
     ddsmoothmenu.init({mainmenuid: "smoothmenu2",orientation: 'v',classname: 'ddsmoothmenu-v',contentsource: "markup"})
     ddsmoothmenu.init({mainmenuid: "smoothmenu3",orientation: 'v',classname: 'ddsmoothmenu-v',contentsource: "markup"})
-</script>
+</script> 
+*/?>
 
 <!-- Mmenu -->
 <script type="text/javascript" src="assets/mmenu/jquery.mmenu.min.all.js"></script>
 <script type="text/javascript">
+    /*
+    function openCity(evt, cityName) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    
+
+    */
     $(document).ready(function(){
         $('nav#menu').mmenu();
         $('.invi-loading').removeClass('invi-loading');
@@ -26,6 +60,91 @@
     <script type="text/javascript" src="assets/nivoslider/js/jquery.nivo.slider.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
+            $('.dichvu-main').on({
+                  beforeChange: function(event, slick, currentSlide, nextSlide) {
+                      // myLazyLoad.update();
+                  }
+              }).slick({
+                  lazyLoad: 'ondemand',
+                  infinite: true,
+                  accessibility: false,
+                  slidesToShow: 4,
+                  slidesToScroll: 1,
+                  autoplay: false,
+                  autoplaySpeed: 3000,
+                  speed: 1000,
+                  arrows: true,
+                  centerMode: false,
+                  dots: false,
+                  draggable: true,
+                  responsive: [{
+                      breakpoint: 800,
+                      settings: {
+                          slidesToShow: 3
+                      }
+                  },{
+                      breakpoint: 500,
+                      settings: {
+                          slidesToShow: 2
+                      }
+                  },{
+                      breakpoint: 430,
+                      settings: {
+                          slidesToShow: 1
+                      }
+                  }
+                  ]
+              });
+            $('.tinnb-main').on({
+                  beforeChange: function(event, slick, currentSlide, nextSlide) {
+                      // myLazyLoad.update();
+                  }
+              }).slick({
+                  lazyLoad: 'ondemand',
+                  infinite: true,
+                  accessibility: false,
+                  slidesToShow: 3,
+                  slidesToScroll: 1,
+                  autoplay: false,
+                  autoplaySpeed: 3000,
+                  speed: 1000,
+                  vertical: true,
+                  arrows: true,
+                  centerMode: false,
+                  dots: false,
+                  draggable: true,
+                  // responsive: [{
+                  //     breakpoint: 800,
+                  //     settings: {
+                  //         slidesToShow: 3
+                  //     }
+                  // },{
+                  //     breakpoint: 500,
+                  //     settings: {
+                  //         slidesToShow: 2
+                  //     }
+                  // },{
+                  //     breakpoint: 430,
+                  //     settings: {
+                  //         slidesToShow: 1
+                  //     }
+                  // }
+                  // ]
+              });
+            $('.slideshow-slider-main').slick({
+                lazyLoad: 'ondemand',
+                infinite: true,
+                accessibility:false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay:true,
+                autoplaySpeed:3000,
+                speed:1000,
+                arrows:true,
+                centerMode:false,
+                dots:false,
+                draggable:true,
+            });
             $('#slider-main').nivoSlider({
                 effect: 'random',
                 slices: 15,
@@ -56,9 +175,44 @@
     <script type="text/javascript">
         function owlproduct()
         {
+            $('.spnoibat-main').on({
+                  beforeChange: function(event, slick, currentSlide, nextSlide) {
+                      // myLazyLoad.update();
+                  }
+              }).slick({
+                  lazyLoad: 'ondemand',
+                  infinite: true,
+                  accessibility: false,
+                  slidesToShow: 4,
+                  slidesToScroll: 1,
+                  autoplay: true,
+                  autoplaySpeed: 3000,
+                  speed: 1000,
+                  arrows: true,
+                  centerMode: false,
+                  dots: false,
+                  draggable: true,
+                  responsive: [{
+                      breakpoint: 800,
+                      settings: {
+                          slidesToShow: 3
+                      }
+                  },{
+                      breakpoint: 500,
+                      settings: {
+                          slidesToShow: 2
+                      }
+                  },{
+                      breakpoint: 430,
+                      settings: {
+                          slidesToShow: 2
+                      }
+                  }
+                  ]
+              });
             $('.owl-product-type').owlCarousel({
-                items: 5,
-                autoplay: true,
+                items: 4,
+                autoplay: false,
                 loop: false,
                 lazyLoad: true,
                 mouseDrag: true,
@@ -88,7 +242,7 @@
                         margin: 0
                     },
                     1000: {
-                        items: 5,
+                        items: 4,
                         margin: 0
                     }
                 }
@@ -221,8 +375,10 @@
     <!-- Easy Ressponsive Tab -->
     <script src="assets/tabs/easyResponsiveTabs.js"></script>
 
+    <?php /* 
     <!-- Slick -->
-    <script src="assets/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+        <script src="assets/slick/slick.js" type="text/javascript" charset="utf-8"></script> 
+    */?>
 
     <!-- Fancybox 3 -->
     <script src="assets/fancybox3/jquery.fancybox.js"></script>
@@ -315,19 +471,28 @@
     function onSearch(obj) 
     {           
         var keyword = $("#"+obj).val();
-        var cate = $("#category").val();
+        // var cate = $("#category").val();
         var url = "tim-kiem.html/";
         
-        if(keyword=='' && cate==0)
+        // if(keyword=='' && cate==0)
+        if(keyword=='')
         {
             alert('Bạn chưa nhập điều kiện tìm kiếm !');
             return false;
         }
 
-        location.href = "tim-kiem.html/cate="+cate+"&keyword="+keyword;
+        // location.href = "tim-kiem.html/cate="+cate+"&keyword="+keyword;
+        location.href = "tim-kiem.html/keyword="+keyword;
         loadPage(document.location);
     }
     $(document).ready(function(){
+        $('.timkiem_icon').click(function(event) {
+          if($('#search').hasClass('hien')){
+            $('#search').removeClass('hien');
+          }else{
+            $('#search').addClass('hien');
+          }
+        });
         $(".panel-search").click(function(){
             $(".ul-search").stop(true,true).slideToggle("fast");
         })

@@ -1,180 +1,92 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
-%map-style {
-    overflow: hidden;
-    width: 100%;
-    height: $height-map;
+%footer-text-css {
+  @include setFont(14px, #383838, 400, $font-text);
 }
-%copyright-font {
-    @include setFont(13px, #fff, 500, $font-text);
-}
-%ft-thongke-css{
-    @extend %reset-list;
+.footer {
+  @include bg("ft-bg.png", $background-repeat: no-repeat, $background-size:null, $background-position:top 40px center);
+  background-color: #f5f5f5;
 
-    @include boxstyle($display: flex);
-    li {
-        @extend %copyright-font;
-
-        @include boxstyle($display: flex, $align-items: center);
-        position: relative;
-        margin: 5px 0;
-
-        span {
-            margin-left: 4px;
-        }
-
-        & + li {
-            margin-left: 2em;
-
-            &::before {
-                content: "";
-                background-color: #fff;
-                @include box(1px, 12px);
-                @include absolute($left: -1em);
-            }
-        }
-    }
-}
-
-#footer {
-    position: relative;
-    width: 100%;
-    z-index: 5;
-    background-size: cover;
-    .ft-top{
-    }
-    .ft-flex {
-        @include boxstyle($display: flex, $justify-content: space-between, $align-items: flex-start);
-        padding: 40px 0;
-        .ft-col-left{
-            width: percentage(380/1200);
-        }
-        .ft-logo { 
-                img{
-                    
-                }
-        }
-        .ft-info {
-            position: relative;
-            width: percentage(450/1200);
-            color: #fff;
-        }
-
-
-
-        .ft-bando {
-        }
-
-        .ft-fanpage {
-            width: percentage(280/1200);
-            .fanpageplace {
-                height: 300px;
-                overflow: hidden;
-            }
-        }
-
-        .ft-dknt{
-        }
-
-        .ft-social{
-        }
-        .ft-chinhanh{
-        }
-
-        .ft-baiviet {
-            @include flex(1);
-            ul {
-                @extend %reset-list;
-                li {
-                    margin-bottom: 7px;
-                    @include setTagAHover(#fff, #ffb800);
-                    @include setFont(14px, #fff);
-                    i{
-                        margin-right: 5px;
-                    }
-                    a {
-                        position: relative;
-                        padding-left: 10px;
-                        @include grid($display: flex, $align-items: flex-start);
-                        
-                        @include p-el(before, $el-width: null, $el-height: null){
-                          // content: "\f009";
-                          content: "";
-                          // // @include setFont(7px, #fff, 700, $font-awesome);
-                          @include box(3px, 3px, 100%);
-                          @include absolute($left: 0px, $top: 9px);
-                          background-color: #fff;
-                        };
-                    }
-                }
-            }
-        }
-    }
-
-    .ft-company {
-        @include setFont(em(31), #fff, 700);
-        text-transform: uppercase;
-        line-height: 1;
-        a {
-            color: #fff;
-        }
-    }
-
-    .ft-tit {
-
-        text-transform: uppercase;
-        position: relative;
-        @include setFont(18px, #fff, 700);
-        @include p-el(before, $el-width: 115px, $el-height: 1px){
-          background-color: #fff;
-          @include absolute($left: 0px, $bottom: -21px);
-      };
-      strong, span {
-        margin-bottom: 55px;
-        display: block;
-        @include p-el(before, $el-width: 60px, $el-height: 1px){
-          background-color: #fff;
-          @include absolute($left: 0px, $bottom: -23px);
-      };
+  &-flex {
+    padding: 50px 0;
+    @include grid(flex, $flex-wrap: nowrap, $justify-content:null, $align-items:null, $gutter:null);
   }
+  &__title {
+    @extend %footer-text-css;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  &__name {
+    @extend %footer-text-css;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #d81211;
+  }
+  &__info {
+    width: percentage(480/1200);
+  }
+  &__baiviet {
+    width: percentage(300/1200);
+    margin-left: percentage(100/1200);
 
-}
+    ul {
+      @extend %reset-list;
+      margin-top: 30px;
 
-    .ft-logo{
-        // @include boxstyle($display: flex, $align-items: center);
-        // width: 28.8%;
-        // margin-bottom: 1em;
-        // a{
-        //     display: block;
-        //     img{
-        //         max-width: 400px;
-        //     }
-        // }
-        
-    }
-
-    .copyright {
+      li {
         position: relative;
-        background-color: $bg-copyright;
-        border-top: 1px solid rgba(255, 255, 255, 0.3);
-        .ft-wrap {
-            min-height: 50px;
-            @include grid($display: flex, $justify-content: space-between
-                , $align-items: center);
-            position: relative;
-            .text {
-                @extend %copyright-font;
-                margin: 5px 0;
-            }
+        padding-left: 16px;
 
-            ul.ft-thongke {
-                @extend %ft-thongke-css;
-            }
+        a {
+          @extend %footer-text-css;
+
+          &:hover {
+            color: #f00;
+          }
+        }
+        &+li {
+          margin-top: 25px;
+        }
+        @include p-el(before, $el-width:3px, $el-height:3px) {
+          background-color: $theme-color;
+          left: 0;
+          top: 8px;
+        }
+      }
+    }
+  }
+}
+.copyright {
+  background-color: $theme-color;
+
+  &-flex {
+    @include grid(flex, $flex-wrap: wrap, $justify-content: space-between, 
+      $align-items: center, $gutter: null);
+  }
+  &__text {
+    @extend %footer-text-css;
+    color: #fff;
+    margin: 3px 0;
+  }
+}
+.thongketruycap {
+    @extend %reset-list;
+  li {
+    @extend %footer-text-css;
+    color: #fff;
+position: relative;
+@include grid(inline-flex, $flex-wrap: null, $justify-content: null, 
+  $align-items: center, $gutter: null);
+min-height: 54px;
+    span {
+    }
+    &+li {
+        margin-left: 24px;
+        @include p-el(before, $el-width: 1px, $el-height: 13px){
+          left: -12.5px;
+          background-color: #fff;
         }
     }
+  }
 }
-.codebando, .codebando iframe{
-    @extend %map-style;
-}
-

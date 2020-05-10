@@ -1,74 +1,68 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
-.hd-bg{
-    .hd-top{
-        border-bottom: 1px solid #ccc;
+.hd{
+    @include bg("hd.jpg",$background-repeat: no-repeat,$background-size: cover,$background-position: 0 0);
+    &-flex{
+        min-height: 120px;
         @include grid(flex, $flex-wrap: wrap, $justify-content: space-between, 
-          $align-items: center, $gutter: null);
-        min-height: 40px;
-        &__left{
-            @include grid(flex, $flex-wrap: null, $justify-content: null, 
-              $align-items: center, $gutter: null);
-            @include flex(1);
-            p{
-                margin-bottom: 0;
-                @include setFont(14px, #666);
+          $align-items: null, $gutter: null);
+    }
+    &-info{
+        @include grid(inline-flex, $flex-wrap: wrap, $justify-content: center, 
+          $align-items: center, $flex-direction: column);
+        p{
+            @include setFont(14px, #333, 400, $font-text);
+            span{
                 i{
-                    margin-right: 10px;
+                    color: $theme-color;
+                    margin-right: 5px;
                 }
-                @include doubly(){
-                    margin-left: 15px;
+                &+span{
+                    margin-left: 27px;
                 }
             }
         }
     }
-    .hd-bot{
-        .d-flex{
-            @include justify-content(space-between);
-        }
-        &__left{
-            text-transform: uppercase;
-
-            @include grid(inline-flex, $flex-wrap: wrap, $justify-content: space-between, 
+    &-hotline{
+        @include grid(inline-flex, $flex-wrap: wrap, $justify-content: null, 
+          $align-items: flex-end);
+        margin-bottom: 12px;
+        section{
+            @include grid(flex, $flex-wrap: nowrap, $justify-content: space-between, 
               $align-items: center, $gutter: null);
-
+            min-height: 46px;
+            padding: 3px 15px 3px 3px;
+            background-color: $theme-color;
+            border-radius: 30px;
             img{
-                height: 110px;
-            }
-            div{
-                margin: 0 27px;
-                text-align: center;
 
-                @include flex(1);
-                h5{
-                    @include setFont(28px, #f00, 900);
-                    margin-bottom: 3px;
-                }
-                p{
-                    @include setFont(22px, #666, 700);
-                    margin-bottom: 0;
-                }
+            }
+        }
+        &__info{
+            margin-left: 10px;
+            span{
+                @include setFont(14px, #fff, 400, $font-text);
+                display: block;
+                line-height: 1;
+            }
+            strong{
+                @include setFont(20px, #fff, 900, $font-text);
+                display: block;
+                line-height: 1;
             }
         }
     }
 }
-.hd-hotline{
-    @include grid(inline-flex, $flex-wrap: wrap, $justify-content: null, 
+.logo{
+    @include grid(inline-flex, $flex-wrap: wrap, $justify-content: space-between, 
       $align-items: center, $gutter: null);
     img{
-        margin-right: 18px;
+        height: 95px;
     }
-    div{
-        span{
-            display: block;
-            @include setFont(14px, #333, 500);
-        }
-        a{
-            display: block;
-            line-height: 1;
-            margin-top: 2px;
-            @include setFont(26px, #f00, 700);
-        }
+}
+.banner{
+    img{
+        height: 80px;
     }
 }

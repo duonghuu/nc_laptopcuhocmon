@@ -1,13 +1,13 @@
-.openBtn {
+button.openBtn {
+    padding: 0;
     border: none;
     cursor: pointer;
     z-index: 400;
-    outline: none !important;
+    outline: none;
     background-color: transparent;
     @include transition(width .6s, border-radius .6s, background .6s, box-shadow .6s);
-    @include absolute($right: 0);
-    @include setFont(17px, #333, 700);
-    @include box(36px, 32px);
+    @include setFont(17px, #fff, 700);
+    @include box(58px, 46px);
     @include grid($display: inline-flex, $align-items: center, $justify-content: center);
 }
 
@@ -15,7 +15,8 @@
     width: 100%;
     max-width: 223px;
     z-index: 50;
-    margin-left: 40px;
+    @include absolute($right: 0px, $top: 100%);
+    display: none;
     &.hien {
         display: block;
     }

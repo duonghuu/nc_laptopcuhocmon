@@ -535,7 +535,8 @@ function edit()
 			}
 			if($_POST['new_pass']!="")
 			{
-				if($_POST['new_pass']=='123qwe' || $_POST['new_pass']=='123456' || $_POST['new_pass']=='ninaco') transfer("Mật khẩu bạn đặt quá dễ, xin vui lòng chọn mật khẩu khác","index.php?com=user&act=admin_edit");			
+				if($_POST['new_pass']=='123qwe' || $_POST['new_pass']=='123456' || $_POST['new_pass']=='ninaco') 
+					transfer("Mật khẩu bạn đặt quá dễ, xin vui lòng chọn mật khẩu khác","index.php?com=user&act=admin_edit");			
 				$data['password'] = md5('$nina@'.$_POST['new_pass'].$config['salt']);
 				$flag_change_pass=true;
 			}
@@ -571,7 +572,10 @@ function login()
 	$username = $_POST['username'];
 	$password = $_POST['password'];
 	$login_failed = false;
-	
+	// echo '<pre>'; print_r(md5('$nina@Z8ORB2CN@#$fd_!34^')); echo '</pre>';
+	// echo '<pre>'; print_r(md5(sha1('Z8ORB2CNadmin'))); echo '</pre>';
+	// echo '<pre>'; print_r(md5(time())); echo '</pre>';
+	// die("xx");
 	$sql = "select * from #_user where username='".$username."' and hienthi>0";
 	$d->query($sql);
 	if($d->num_rows() == 1)
@@ -579,6 +583,7 @@ function login()
 		$row = $d->fetch_array();
 		if(($row['password'] == encrypt_password($password,$config['salt'])) && ($row['role'] == 3))
 		{
+
 			$timenow = time();
 			$id_user = $row['id'];
 			$ip= getRealIPAddress();
@@ -617,7 +622,8 @@ function login()
 
 			/* Begin Reset số lần đăng nhập và thời gian đăng nhập */
 			$d->reset();
-			$sql = "select id,login_ip,login_attempts,attempt_time,locked_time from #_user_limit where login_ip = '$ip'  order by  id desc limit 1";
+			$sql = "select id,login_ip,login_attempts,attempt_time,locked_time from #_user_limit 
+			where login_ip = '$ip'  order by  id desc limit 1";
 			$d->query($sql);
 			if($d->num_rows()==1)
 			{
@@ -684,7 +690,8 @@ function login()
 	{
 		$ip = getRealIPAddress();
 		$d->reset();
-		$sql = "select id,login_ip,login_attempts,attempt_time,locked_time from #_user_limit where login_ip =  '$ip'  order by  id desc limit 1";
+		$sql = "select id,login_ip,login_attempts,attempt_time,locked_time from #_user_limit 
+		where login_ip =  '$ip'  order by  id desc limit 1";
 		$d->query($sql);			
 		if($d->num_rows()==1)
 		{

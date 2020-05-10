@@ -18,6 +18,12 @@
 	$tab = sanitize($_POST['tab']);
 	$product = get_result_array("SELECT ten$lang, mota$lang, tenkhongdau, gia, giagiam, photo, id FROM table_product WHERE hienthi=1 AND type='san-pham' AND $tab>0 ORDER BY stt,id DESC");
 ?>
+<div class="spnoibat-main">
+  <?php for($i=0;$i<count($product);$i++) { 
+    showProduct($product[$i],["slick"=>true]);
+  } ?>
+</div>
+<?php /* 
 <div class="owl-carousel owl-theme owl-product-type">
 	<?php for($i=0;$i<count($product);$i++) { ?>
 		<div>
@@ -40,4 +46,5 @@
 			</a>
 		</div>
 	<?php } ?>
-</div>
+</div> 
+*/?>

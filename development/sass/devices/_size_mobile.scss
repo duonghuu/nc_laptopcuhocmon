@@ -1,9 +1,9 @@
 @media screen 
 	and (max-width: $device_size_mobile) {
         @include setHeaderCenter;
-          @include showMobileMenu;
-          @include setIdxTitleSize;
-          @include setSlider_SM;
+          // @include showMobileMenu;
+          // @include setIdxTitleSize;
+          // @include setSlider_SM;
           /*========= HOME ===============*/
         //   @include setTinNB_SM;
         //   @include setViSao_SM{
@@ -11,9 +11,8 @@
         //               @include font-size(16);  
         //         }
         //   };
-          @include setProductColumnMobile($p_col: 12, $p_gutter: 0){
-            
-          };
+         $product-gutter: percentage(14/1200);
+          @include setProductColumnMobile($p_col: 6, $p_gutter: $product-gutter);
         //   @include setTinVideoFull;
         //   @include setThuVien_MB{
 
@@ -38,16 +37,16 @@
         // }
           
           /*========= FOOTER ===============*/
-          @include setFooterSmall{
-                #footer {
-                  .ft-flex {
-                    .ft-info, .ft-social,.ft-video, .ft-baiviet  {
-                      width: 100%;
-                    }
-                  }
-                }
-          };
-          @include setContact;
-          @include setCopyrightCenter;
+          // @include setFooterSmall{
+          //       #footer {
+          //         .ft-flex {
+          //           .ft-info, .ft-social,.ft-video, .ft-baiviet  {
+          //             width: 100%;
+          //           }
+          //         }
+          //       }
+          // };
+          // @include setContact;
+          // @include setCopyrightCenter;
           
 }

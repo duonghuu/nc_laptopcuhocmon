@@ -1,3 +1,28 @@
+<header class="hd">
+	
+	<div class="wrap-content">
+		<div class="hd-flex">
+			<a href="" class="logo"><img src="<?=_upload_photo_l.$logo['photo']?>" alt="logo"></a>
+			<div class="hd-info">
+				<a href="" class="banner"><img src="<?=_upload_photo_l.$banner['photo']?>" alt="banner"></a>
+				<p>
+					<span><i class="fa fa-map-marker-alt"></i><?=$row_setting['diachi']?></span>
+					<span><i class="fa fa-envelope"></i><?=$row_setting['email']?></span>
+				</p>
+			</div>
+			<div class="hd-hotline">
+				<section>
+					<img src="assets/images/hd-hotline.png" alt="hotline">
+					<div class="hd-hotline__info">
+						<span>Hotline:</span>
+						<strong><?=$row_setting['hotline']?></strong>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+</header>
+<?php /* 
 <div class="header">
 	<div class="header-top">
 		<div class="wrap-content">
@@ -8,7 +33,8 @@
 	</div>
 	<div class="header-bottom">
 		<div class="wrap-content">
-			<a class="logo-header-bottom" href=""><img class="lazy" src="assets/images/pixel.gif" data-src="<?=_upload_photo_l.$logo['photo']?>"/></a>
+			<a class="logo-header-bottom" href=""><img class="lazy" src="assets/images/pixel.gif" 
+			data-src="<?=_upload_photo_l.$logo['photo']?>"/></a>
 			<div class="search-header-bottom">
 				<div class="tags-header-bottom text-hide w-clear">
 					<a>Xu hướng tìm kiếm:</a>
@@ -43,7 +69,8 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> 
+*/?>
 <a id="btn-zalo" href="https://zalo.me/<?=preg_replace('/[^0-9]/','',$row_setting['zalo']);?> " target="_blank">
 	<div class="animated infinite zoomIn kenit-alo-circle"></div>
 	<div class="animated infinite pulse kenit-alo-circle-fill"></div>

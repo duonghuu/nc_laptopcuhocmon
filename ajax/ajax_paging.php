@@ -44,7 +44,12 @@
 		$paging->data = "".$message."";
     } 
 ?>
-<?php for($i=0;$i<count($product);$i++) { ?>
+<div class="product-grid">
+<?php for($i=0;$i<count($product);$i++) { 
+showProduct($product[$i]);
+	?>
+<?php /* 
+	<div class="pr-box">
 	<a class="sp" href="san-pham/<?=$product[$i]['tenkhongdau']?>-<?=$product[$i]['id']?>.html" title="<?=$product[$i]['ten'.$lang]?>">
 		<div class="info-sp">
 			<div class="pic-sp scale-img">
@@ -62,6 +67,9 @@
 			<?php } ?>
 		</div>
 	</a>
+	</div> 
+*/?>
 <?php } ?>
+</div>
 <div class="clear"></div>
 <?=$paging->Load();?>

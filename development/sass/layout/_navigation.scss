@@ -33,63 +33,54 @@
 .nav-bg {
     
     @include relative($left: 0, $right: 0);
-    z-index: 449;
-    background-color: #ffcb0e;
+    z-index: 4;
+    background-color: $bg-menu;
     @include when-inside('.clsindex'){
         
     }
 }
 .main-nav {
-    @include grid($display: flex, $justify-content: space-between, $align-items: center);
+    @include grid($display: flex, $justify-content: null, $align-items: center);
     position: relative;
     ul{
         @extend %reset-list;
     }
-    &>ul {
+    > ul {
         @include grid($display: flex, $align-items: center,$justify-content: null);
         @include flex(1);
         z-index: 5;
         position: relative;
-        &>li {
-            @include grid($display: flex, $align-items: center);
+        > li {
             @include flex(auto);
             position: relative;
             z-index: 5;
+            > a {
+                @include setFont(16px, #fff);
+                @include grid(inline-flex, $flex-wrap: wrap, $justify-content: center, 
+                  $align-items: center, $gutter: null);
+                min-height: 46px;
+                width: 100%;
+                position: relative;
+                text-transform: uppercase;
+                @include bg-linear-gradient(#029be8,#03abff,90deg);
+            }
             ul{
                 @extend %sub-menu-list;
                 top: 100%;
             }
-            @include setTagAHover(#fff,$color-menu-hover);
-            &>a {
-                @include grid($display: flex, $align-items: center,
-                    $justify-content: center);
-                @include setFont(14px, $theme-color, 900);
-                min-height: 50px;
-                width: 100%;
-                position: relative;
-                text-transform: uppercase;
-            }
             
-            &:hover {
-                &>a {
+            &.active {
+                > a {
                     @extend %hover_menu_color;
                 }
-                &>ul{
+            }
+            &:hover {
+                > a {
+                    @extend %hover_menu_color;
+                }
+                > ul{
                     display: block;
                 }
-            }
-            &.active{
-                &>a {
-                    @extend %hover_menu_color;
-                }
-            }
-            @include p-el(after, $el-width: 1px, $el-height: 12px){
-              @include background-opacity(#fff, $opacity: 0.4);;
-              right: 0;
-            };
-            @include doubly()
-            {
-                
             }
         }
     }

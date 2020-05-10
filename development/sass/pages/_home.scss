@@ -1,3 +1,399 @@
 // -----------------------------------------------------------------------------
 // This file contains styles that are specific to the home page.
 // -----------------------------------------------------------------------------
+.idx-tit {
+  h4 {
+    @include grid(flex, $flex-wrap: wrap, $justify-content:center, $align-items:center, $gutter:null);
+    @include setFont(34px, #000, 400, $font-SFUTradeGothicBoldCondensedTwenty);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    span, a {
+      @include grid(inline-flex, $flex-wrap: null, $justify-content:center, $align-items:center, $gutter:null);
+      position: relative;
+
+      @include p-el(before, $el-width:84px, $el-height:10px) {
+        position: relative;
+        @include bg("idx-l.png", $background-repeat: no-repeat, $background-size:null, $background-position:0 0);
+        margin-right: 25px;
+      }
+      @include p-el(after, $el-width:84px, $el-height:10px) {
+        margin-left: 25px;
+        position: relative;
+        @include bg("idx-r.png", $background-repeat: no-repeat, $background-size:null, $background-position:0 0);
+      }
+    }
+  }
+}
+%slider-item-1 {
+  display: block;
+  position: relative;
+}
+%slide-text-color {
+  color: #fff;
+}
+.slider-bg {
+  margin-bottom: 45px;
+}
+.slider-flex {
+  @include boxstyle($display: flex, $justify-content:space-between);
+}
+@-webkit-keyframes fadeInUpSD {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+#slideshow {
+  position: relative;
+  overflow: hidden;
+  @include flex(1);
+
+  .slideshow-slider-main {
+    @include clearfix;
+
+    .slideshow-slider-item {
+      &.slick-active {
+        & > section {
+          .slider-text-bg {
+            .slider-text {
+              animation-name: fadeInUpSD;
+              animation-duration: 1s;
+              opacity: 1;
+            }
+          }
+        }
+      }
+      & > section {
+        @extend %slider-item-1;
+
+        .slider-link {
+          display: block;
+
+          img {
+            width: 100%;
+          }
+        }
+        .slider-text-bg {
+          @include grid(flex, $justify-content: flex-end, $align-items:center);
+          @include absolute(0, 0, 0, 0);
+
+          .slider-text {
+            width: 100%;
+            max-width: 640px;
+            margin-right: percentage(83/1366);
+            opacity: 0;
+
+            &__welcome {
+              @include setFont(15px, #fff);
+              margin-bottom: 0;
+            }
+            &__ten {
+              @include setFont(45px, $theme-color, 700);
+              @include text-stroke(2px #fff);
+              @include line-clamp($font-size: 45px, $line-height:1.1, $lines-to-show:1, $max-height:false);
+              text-transform: uppercase;
+              margin-bottom: 0;
+            }
+            &__ngaytao {
+              @include setFont(15px, #bec4c6, 500);
+              margin: 10px 0;
+            }
+            &__mota {
+              @include setFont(25px, #fff, 700);
+              @include line-clamp($font-size: 25px, $line-height:1.5, $lines-to-show:2, $max-height:true);
+              margin-bottom: 20px;
+              @include text-shadow(2px, 2px, 2px, rgba(0, 0, 0, .25));
+            }
+            &__button {
+              &.slider-button {
+                @include grid(flex, $justify-content: center);
+
+                a {
+                  @include setFont(14px, #fff, 400, $font-SVN-Poppins);
+                  background-color: $theme-color;
+                  border-radius: 20px;
+                  padding: 11px 20px;
+                  display: inline-block;
+                  margin: 0 auto 7px;
+                  text-transform: uppercase;
+                  cursor: pointer;
+                }
+                .slider-button__xemthem {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.title-product {
+  @include grid(flex, $flex-wrap: wrap, $justify-content:center, $align-items:center, $gutter:null);
+  margin-bottom: 30px;
+
+  .label-product {
+    @include setFont(26px, #fff, 400, $font-SFUTradeGothicBoldCondensedTwenty);
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 4.5px 24px;
+    position: relative;
+
+    @include p-el(before, $el-width:100%, $el-height:100%) {
+      @include absolute($left: 0px, $top:0px);
+      background-color: #03aafe;
+      z-index: -1;
+      transform: skewX(-10deg);
+    }
+    &.active {
+      &:before {
+        background-color: #d81211;
+      }
+    }
+    @include doubly() {
+      margin-left: 24px;
+    }
+  }
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+.my-product-cat {
+  @include grid(flex, $flex-wrap: wrap, $justify-content:center, $align-items:null, $gutter:null);
+
+  h3 {
+    position: relative;
+    @include setFont(18px, #2c2c2c, 400, $font-SFUTradeGothicBoldCondensedTwenty);
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 4.5px 24px;
+    position: relative;
+
+    @include p-el(before, $el-width:100%, $el-height:100%) {
+      @include absolute($left: 0px, $top:0px);
+      background-color: #fff;
+      border: 1px solid #01a5fa;
+      z-index: -1;
+      transform: skewX(-10deg);
+    }
+    &.active {
+      color: #fff;
+
+      &:before {
+        background-color: #01a5fa;
+      }
+    }
+    @include doubly() {
+      margin-left: 24px;
+    }
+    @include p-el(before, $el-width:100%, $el-height:100%) {
+    }
+  }
+}
+.dichvu-main {
+  margin: 0 -13.5px;
+}
+.dichvu-item {
+  padding: 0 13.5px;
+
+  a {
+    display: block;
+    border: 1px solid #d8d8d8;
+
+    figure {
+      img {
+      }
+    }
+  }
+  &__info {
+    padding: 20px 18px;
+    position: relative;
+    background-color: #fff;
+
+    h5 {
+      @include setFont(17px, #282828, 700, $font-text);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    @include p-el(after, $el-width:26px, $el-height:26px) {
+      @include bg("fold.png", $background-repeat: no-repeat, $background-size:null, $background-position:0 0);
+      right: -1px;
+      bottom: -1px;
+    }
+  }
+  &__desc {
+    @include setFont(14px, #777, 400, $font-text);
+    line-height: 1.5;
+  }
+}
+.box-intro{
+  .title{
+    @include setFont(26px, #000, 400, $font-SFUTradeGothicBoldCondensedTwenty);
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    position: relative;
+    @include p-el(before, $el-width: 60px, $el-height: 2px){
+      background-color: $theme-color;
+      left: 0;
+      bottom: -22px;
+    };
+  }
+}
+.ttnb{
+  @include clearfix;
+  .first-news{
+    width: percentage(280/696);
+    float: left;
+    a{
+      display: block;
+      figure{
+        padding-top: percentage(200/280);
+        margin-bottom: 20px;
+        position: relative;
+        img{
+          @extend %img-fill;
+          object-fit: scale-down;
+          object-position: center center;
+        }
+      }
+      h5{
+        @include setFont(15px, #000, 700, $font-text);
+        line-height: 1.5;
+      }
+      .desc{
+        line-height: 1.5;
+        @include setFont(14px, #5a5a5a, 400, $font-text);
+      }
+    }
+  }
+  .tinnb-main{
+    float: right;
+    width: percentage(390/696);
+    .tinnb-item{
+      margin-bottom: 13px;
+      a{
+        @include grid(flex, $flex-wrap: wrap, $justify-content: space-between, 
+          $align-items: null, $gutter: null);
+        figure{
+          width: percentage(140/390);
+          padding-top: 100% - percentage(100/140);
+          position: relative;
+          img{
+            @extend %img-fill;
+            object-fit: scale-down;
+            object-position: center center;
+          }
+        }
+        .info{
+          @include flex(1);
+          margin-left: 10px;
+          h5{
+            @include setFont(15px, #000, 700, $font-text);
+            line-height: 1.5;
+
+          }
+          .desc{
+            line-height: 1.5;
+            @include setFont(14px, #5a5a5a, 400, $font-text);
+          }
+        }
+      }
+    }
+  }
+}
+.formdathang{
+  @include bg("formdathang.jpg",$background-repeat: no-repeat,$background-size: cover,$background-position: 0 0);
+  padding: 30px 0;
+  .idx-tit h4{
+    color: #fff;
+  }
+  &__top{
+    @include grid(flex, $flex-wrap: wrap, $justify-content: space-between, 
+      $align-items: null, $gutter: null);
+    .form-group{
+      input[type="text"]{
+        @include box(100%, 42px, 3px);
+        margin-bottom: 20px;
+        padding: 7px;
+      }
+      textarea{
+        padding: 7px;
+        @include box(100%, 104px, 3px);
+
+      }
+    }
+    &-left{
+      width: percentage(590/1200);
+      @include grid(flex, $flex-wrap: wrap, $justify-content: space-between, 
+        $align-items: null, $gutter: null);
+      .form-group{
+        width: 49%;
+      }
+    }
+    &-right{
+      width: percentage(570/1200);
+      position: relative;
+      @include p-el(before, $el-width: 1px, $el-height: calc(100% - 20px)){
+        top: 0;
+        left: -20px;
+        background-color: #fff;
+      };
+    }
+    
+  }
+  &__bot{
+    text-align: center;
+    button{
+      display: inline-block;
+      @include setFont(16px, #fff, 700);
+      text-transform: uppercase;
+      background-color: #d81211;
+      border-radius: 3px;
+      padding: 0 30px;
+      line-height: 44px;
+      border: 0;
+      cursor: pointer;
+    }
+  }
+}

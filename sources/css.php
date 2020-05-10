@@ -5,7 +5,7 @@
 <?php /* 
 <style type="text/css"><?php echo file_get_contents($config_url_http.'assets/cssoptimized.php'); ?></style> 
 */?>
-<link rel="stylesheet" href="main.css?v=1.0">
+<link rel="stylesheet" href="main.css?v=<?= time() ?>">
 <!-- JS DESKTOP -->
 <script type="text/javascript" src="assets/js/jquery.min.js"></script>
 
@@ -64,4 +64,6 @@
 <?=$row_setting['analytics']?>
 
 <!-- Head JS -->
-<?=$row_setting['headjs']?>
+<?php /* 
+<?=$row_setting['headjs']?> 
+*/?>

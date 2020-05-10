@@ -201,12 +201,22 @@
 	/* Logo */
 	$config['photo']['photo_static']['logo']['title_main']="Logo";
 	$config['photo']['photo_static']['logo']['images']=true;
-	$config['photo']['photo_static']['logo']['width']=280;
-	$config['photo']['photo_static']['logo']['height']=80;
-	$config['photo']['photo_static']['logo']['thumb_width']=280;
-	$config['photo']['photo_static']['logo']['thumb_height']=80;
+	$config['photo']['photo_static']['logo']['width']=100;
+	$config['photo']['photo_static']['logo']['height']=95;
+	$config['photo']['photo_static']['logo']['thumb_width']=100;
+	$config['photo']['photo_static']['logo']['thumb_height']=95;
 	$config['photo']['photo_static']['logo']['thumb_ratio']=1;
 	$config['photo']['photo_static']['logo']['img_type']='.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
+
+	/* Banner */
+	$config['photo']['photo_static']['banner']['title_main']="Banner";
+	$config['photo']['photo_static']['banner']['images']=true;
+	$config['photo']['photo_static']['banner']['width']=280;
+	$config['photo']['photo_static']['banner']['height']=80;
+	$config['photo']['photo_static']['banner']['thumb_width']=280;
+	$config['photo']['photo_static']['banner']['thumb_height']=80;
+	$config['photo']['photo_static']['banner']['thumb_ratio']=1;
+	$config['photo']['photo_static']['banner']['img_type']='.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
 
 	/* Logo form */
 	$config['photo']['photo_static']['logo_form']['title_main']="Logo form";
@@ -254,10 +264,10 @@
 	$config['photo']['man_photo']['slide']['images_photo']=true;
 	$config['photo']['man_photo']['slide']['avatar_photo']=true;
 	$config['photo']['man_photo']['slide']['link_photo']=true;
-	$config['photo']['man_photo']['slide']['width_photo']=915;
-	$config['photo']['man_photo']['slide']['height_photo']=430;
-	$config['photo']['man_photo']['slide']['thumb_width_photo']=915;
-	$config['photo']['man_photo']['slide']['thumb_height_photo']=430;
+	$config['photo']['man_photo']['slide']['width_photo']=1366;
+	$config['photo']['man_photo']['slide']['height_photo']=500;
+	$config['photo']['man_photo']['slide']['thumb_width_photo']=1366;
+	$config['photo']['man_photo']['slide']['thumb_height_photo']=500;
 	$config['photo']['man_photo']['slide']['thumb_ratio_photo']=1;
 	$config['photo']['man_photo']['slide']['img_type_photo']='.jpg|.gif|.png|.jpeg|.gif|.JPG|.PNG|.JPEG|.Png|.GIF';
 
